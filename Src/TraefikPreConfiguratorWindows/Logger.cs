@@ -28,6 +28,9 @@ namespace TraefikPreConfiguratorWindows
             TelemetryConfiguration telemetryConfiguration = new TelemetryConfiguration(instrumentationKey);
             new DiagnosticsTelemetryModule().Initialize(telemetryConfiguration);
             Logger.telemetryClient = new TelemetryClient(telemetryConfiguration);
+            var traceSource = new TraceSource("TraceLogging");
+            TelemetryConfiguration.Active.InstrumentationKey = instrumentationKey;
+            traceSource.Switch.Level = SourceLevels.All;
         }
 
         /// <summary>

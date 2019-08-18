@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PublishProfile xmlns="http://schemas.microsoft.com/2015/05/fabrictools">
+  <!-- ClusterConnectionParameters allows you to specify the PowerShell parameters to use when connecting to the Service Fabric cluster.
+       Valid parameters are any that are accepted by the Connect-ServiceFabricCluster cmdlet.
+       
+       For a local cluster, you would typically not use any parameters.
+         For example: <ClusterConnectionParameters />
+  -->
+  <ClusterConnectionParameters ConnectionEndpoint="cmbdev1fab.northeurope.cloudapp.azure.com:19000" X509Credential="true" ServerCertThumbprint="AD1AA423010ED88D7BC3032A99E9BE2A137893CB" FindType="FindByThumbprint" FindValue="AD1AA423010ED88D7BC3032A99E9BE2A137893CB" StoreLocation="CurrentUser" StoreName="My" />
+  <ApplicationParameterFile Path="..\ApplicationParameters\Dev.xml" />
+  <UpgradeDeployment Mode="UnmonitoredAuto" Enabled="false">
+    <Parameters UpgradeReplicaSetCheckTimeoutSec="1" Force="True" ForceRestart="True" />
+  </UpgradeDeployment>
+</PublishProfile>

@@ -4,12 +4,14 @@
     <Parameter Name="Traefik_InstanceCount" DefaultValue="-1" />
 
     <!-- Parameters for Traefik PreConfigurator. These can now be overriden in any Application Parameter to cater to specific cluster needs. -->
-    <Parameter Name="TraefikApplicationInsightsKey" DefaultValue=""/>
-    <Parameter Name="TraefikCertsToConfigure" DefaultValue=""/>
-    <Parameter Name="TraefikKeyVaultUri" DefaultValue=""/>
-    <Parameter Name="TraefikKeyVaultClientId" DefaultValue=""/>
-    <Parameter Name="TraefikKeyVaultClientCert" DefaultValue=""/>
-    <Parameter Name="TraefikUseManagedIdentityAuth" DefaultValue="false"/>
+    <Parameter Name="TraefikApplicationInsightsKey" DefaultValue="1d8d9888-cd07-49fe-8ef9-e5b881c3f330"/>
+    <Parameter Name="TraefikCertsToConfigure" DefaultValue="sslcert;KeyVault;SSLCert,clustercert;MyLocalMachine;AD1AA423010ED88D7BC3032A99E9BE2A137893CB"/>
+    <Parameter Name="TraefikKeyVaultUri" DefaultValue="https://cmbdev1vault.vault.azure.net"/>
+    <Parameter Name="TraefikKeyVaultClientId" DefaultValue="295810e0-5217-490e-b4bd-5489be3ebe7b"/>
+    <Parameter Name="TraefikKeyVaultClientCert" DefaultValue="bssXM8i83YBha+cfzQWqkRsVXirpV+sktXRIBR4oH0U="/>
+    <Parameter Name="TraefikUseManagedIdentityAuth" DefaultValue="true"/>
+    <Parameter Name="TraefikKeyVaultClientSecret" DefaultValue=""/>
+
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 

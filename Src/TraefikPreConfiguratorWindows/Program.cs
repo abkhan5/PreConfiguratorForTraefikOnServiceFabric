@@ -83,7 +83,8 @@ namespace TraefikPreConfiguratorWindows
                     bool useEnvironmentVariables = useEnvironmentVariablesOption.HasValue();
                     if (applicationInsightsInstrumentationKeyOption.HasValueExtended(useEnvironmentVariables))
                     {
-                        Logger.ConfigureLogger(applicationInsightsInstrumentationKeyOption.GetValueExtended(useEnvironmentVariables));
+                        var instrumentationKey = applicationInsightsInstrumentationKeyOption.GetValueExtended(useEnvironmentVariables);
+                        Logger.ConfigureLogger(instrumentationKey);
                     }
 
                     if (configureCertsOption.HasValueExtended(useEnvironmentVariables))

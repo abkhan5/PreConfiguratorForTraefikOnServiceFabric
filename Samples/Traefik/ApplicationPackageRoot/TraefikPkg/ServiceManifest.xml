@@ -13,7 +13,7 @@
     <SetupEntryPoint>
       <ExeHost>
         <Program>TraefikPreConfiguratorWindows.exe</Program>
-        <Arguments>-UseEnv</Arguments>
+        <Arguments>--ConfigureCerts "Certs" --ApplicationInsightsKey "1d8d9888-cd07-49fe-8ef9-e5b881c3f330" --CertsToConfigure "ClusterCert;MyLocalMachine;ClusterCertThumbprint,SSLCert;KeyVault;SSLSecretName" --KeyVaultUri "https://cmbdev1vault.vault.azure.net/" --KeyVaultClientId "295810e0-5217-490e-b4bd-5489be3ebe7b" -KeyVaultClientSecret "bssXM8i83YBha+cfzQWqkRsVXirpV+sktXRIBR4oH0U="</Arguments>
         <WorkingFolder>CodePackage</WorkingFolder>
          <!--Uncomment to log console output (both stdout and stderr) to one of the
              service's working directories. Do not use in production.--> 
@@ -51,7 +51,7 @@
            replicas of different partitions that are placed in your code. -->
       <!--HTTPS port will not work without enabling SSL termination on Traefik. Refer to https://docs.traefik.io/configuration/entrypoints/-->
       <Endpoint Name="TraefikTypeHttpsEndpoint" UriScheme="https" Port="443" />
-      <Endpoint Name="TraefikTypeAPIEndpoint" UriScheme="http" Port="8080" />
+      <Endpoint Name="TraefikTypeAPIEndpoint" UriScheme="http" Port="8081" />
     </Endpoints>
   </Resources>
 </ServiceManifest>
